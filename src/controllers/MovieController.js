@@ -7,7 +7,7 @@ class MovieController {
             data.map(d => delete d._id);
             res.send(data);                
         } catch (e) {
-            return res.send({err: 'Something went wrong'});
+            return res.status(500).send({err: 'Something went wrong'});
         }
     }
 
@@ -29,7 +29,7 @@ class MovieController {
             await res.app.db.collection(MOVIES_COLLECTION).updateMany({'imdbID': movie.imdbID}, {$set: movie}, {upsert: true});
         
         } catch (e) {
-            return res.send({err: 'Something went wrong'});
+            return res.status(500).send({err: 'Something went wrong'});
         }
     }
 }

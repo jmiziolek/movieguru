@@ -8,7 +8,7 @@ class CommentsController {
             comments.map(d => delete d._id);
             res.send(comments);    
         } catch (e) {
-            return res.send({err: 'Something went wrong'});
+            return res.status(500).send({err: 'Something went wrong'});
         }
     }
 
@@ -29,7 +29,7 @@ class CommentsController {
             await res.app.db.collection(COMMENTS_COLLECTION).insert({comment, movie});
             return res.send({status: 'ok'});    
         } catch (e) {
-            return res.send({err: 'Something went wrong'});
+            return res.status(500).send({err: 'Something went wrong'});
         }
     }
 }
