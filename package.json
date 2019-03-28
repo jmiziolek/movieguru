@@ -1,0 +1,13 @@
+{
+  "name": "movieguru",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jest": "^24.5.0",
+    "mongodb": "^3.2.2"
+  }
+}
