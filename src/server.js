@@ -4,8 +4,8 @@ const bodyParser = require('body-parser')
 
 const MongoClient = require('mongodb').MongoClient;
 
-const MovieController = require('./MovieController');
-const CommentsController = require('./CommentsController');
+const MovieController = require('./controllers/MovieController');
+const CommentsController = require('./controllers/CommentsController');
 
 const OMDBFetcher = require('./OMDBFetcher');
 
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 });
   
 app.get('/movies', MovieController.getAllMovies);
-app.get('/movies2', MovieController.getMovie)
+app.post('/movies', MovieController.getMovie)
 
 app.get('/comments', CommentsController.getAllComments);
 app.post('/comments', CommentsController.addComment);
